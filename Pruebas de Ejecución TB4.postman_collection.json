@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "b31a0f8d-0e20-4f9c-92d8-9790e5a53c9f",
+		"name": "Pruebas de Ejecución TB4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35204075"
+	},
+	"item": [
+		{
+			"name": "Crear Postulacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"proyectoId\": 1,\r\n  \"ilustradorId\": 6,\r\n  \"estado\": \"string\",\r\n  \"fecha\": \"2025-06-22T20:32:22.495Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/postulaciones"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Postulaciones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/postulaciones"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Postulaciones Por Proyecto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/postulaciones/proyectoId/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Postulaciones Por Ilustrador",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/postulaciones/ilustradorId/4"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Portafolio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ilustradorId\": 4,\r\n  \"titulo\": \"Ilustraciones bacanas\",\r\n  \"descripcion\": \"Cheverez\",\r\n  \"urlImagen\": \"https://hips.hearstapps.com/hmg-prod/images/mejores-ilustradores-del-mundo-1656667526.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/portafolios"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Ilustracion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Imagenes de esss\",\r\n  \"descripcion\": \"Imagenes piolas de perrillos\",\r\n  \"urlImagen\": \"https://mott.pe/noticias/wp-content/uploads/2017/07/10-ilustradores-famosos-que-se-convirtieron-en-celebridades.jpg\",\r\n  \"publicada\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/ilustraciones/publicar/4"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Ilustracion en Portafolio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ilustracionId\": 1,\r\n  \"ilustradorId\": 4,\r\n  \"titulo\": \"Nueva Ilustracion de Perrillos\",\r\n  \"descripcion\": \"HolAAAA\",\r\n  \"urlImagen\": \"https://mott.pe/noticias/wp-content/uploads/2017/07/10-ilustradores-famosos-que-se-convirtieron-en-celebridades.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/portafolios/1/ilustraciones"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Ilustraciones en Portafolios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/portafolios/ilustrador/4"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Portafolio",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Ilustraciones chidas\",\r\n  \"descripcion\": \"Ch\",\r\n  \"urlImagen\": \"https://concepto.de/wp-content/uploads/2024/05/revolucion-cientifica.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/portafolios/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Calificaciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/ilustraciones/3/resumen"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Ilustraciones Publicadas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/ilustraciones/ilustrador/4/publicadas"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear calificacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"usuarioId\": 4,\r\n  \"puntuacion\": 5,\r\n  \"comentario\": \"Buena broer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/calificaciones/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Calificacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/calificaciones/1"
+			},
+			"response": []
+		}
+	]
+}
