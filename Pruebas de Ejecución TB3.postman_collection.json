@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "a09e65ff-089e-4d9a-a5f4-eb9fa70f5f1f",
+		"name": "Pruebas de Ejecución TB3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35204075"
+	},
+	"item": [
+		{
+			"name": "Registro de Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"abel123@gmail.com\",\r\n  \"password\": \"diego123\",\r\n  \"role\": \"ESCRITOR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/authentication/sign-up"
+			},
+			"response": []
+		},
+		{
+			"name": "Inicio de sesión",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"diego123@gmail.com\",\r\n  \"password\": \"diego123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/authentication/sign-in"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Usuarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkaWVnbzEyM0BnbWFpbC5jb20iLCJpYXQiOjE3NTA2MTU5MTcsImV4cCI6MTc1MTIyMDcxN30.p_aIhKTe-XUK_mA2v5hFiU2vgpZajA-SALZnjNMjzpKssG9hA5opeE6FiPTLi6Ay",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"usuario1id\": 1,\r\n  \"usuario2id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/chats"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Todos los Chats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/chats"
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar Mensaje",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"remitenteId\": 1,\r\n  \"texto\": \"Por que no me contestas?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/chats/1/mensajes"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Mensajes de Chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/chats/1/mensajes"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/chats/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Receptor por Remitente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/chats/mensajes/receptor/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Proyecto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"escritorId\": 1,\r\n  \"titulo\": \"Nuevo Anuncio, Nuevo libro de Aventuras\",\r\n  \"descripcion\": \"Postulen a este increible libro de aventuras en desarrollo!\",\r\n  \"urlImagen\": \"https://wallpapers.com/images/hd/adventure-background-04mzhe7otd31w7dx.jpg\",\r\n  \"fecha\": \"2025-06-22T18:31:11.162Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/proyectos"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Proyectos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/proyectos"
+			},
+			"response": []
+		}
+	]
+}
