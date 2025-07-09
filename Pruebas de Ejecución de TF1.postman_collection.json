@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "02f347be-3adf-4351-a1a7-78d60c25b37a",
+		"name": "Pruebas de Ejecución de TF1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35204075"
+	},
+	"item": [
+		{
+			"name": "Obtener Libro por Escritor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/escritor/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Publicar Libro segun Escritor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"ASFasd\",\r\n  \"sinopsis\": \"asfsdf\",\r\n  \"urlImagen\": \"sdfsdf\",\r\n  \"urlLibro\": \"asfsdf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/libros/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Calificacion según Libro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/calificaciones/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Publicación de Calificacion en Libro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"usuarioId\": 1,\r\n  \"puntuacion\": 5,\r\n  \"comentario\": \"Gdass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/calificaciones/1"
+			},
+			"response": []
+		}
+	]
+}
